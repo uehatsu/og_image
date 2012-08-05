@@ -1,0 +1,18 @@
+og_image auto creator plugin for Movable Type by Hatsuhito UENO A.K.A. uehatsu
+
+How to use:
+
+1. Set up plugin
+
+  Please setup plugin on Movable Type system view.
+    a) Default image path
+    b) Image min size
+
+2. Add code on HTML header template.
+
+  <meta property="og:image" content="<mt:OgImageContent>" />
+
+3. rebuild sites and blogs
+
+facebook : https://www.facebook.com/hatsuhito.ueno
+twitter  : @uehatsu
