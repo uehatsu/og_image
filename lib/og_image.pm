@@ -27,7 +27,7 @@ sub hdlr_og_image_content {
             next if ( $width < $min_size && $height < $min_size );
             next if ( $max_image_size > $image_size );
             $max_image_size = $image_size;
-            $output = $attr->{src} . "\n";
+            $output = $attr->{src};
         }
         return $output ? $output : load_plugindata('og_image_default_path');
     } else {
