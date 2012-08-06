@@ -10,7 +10,7 @@ How to use:
 
 2. Add code on HTML header template.
 
-  <meta property="og:image" content="<mt:OgImageContent>" />
+  <mt:OgImageTag>
 
 3. rebuild sites and blogs
 
