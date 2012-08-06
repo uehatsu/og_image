@@ -1,7 +1,7 @@
 id: og_image
 key: og_image
 name: og_image content クリエイター
-version: 0.01
+version: 0.02
 description: og_image の content を自動的に作成します
 author_name: Hatsuhito UENO A.K.A. uehatsu
 author_link: http://uehatsu.info
@@ -12,9 +12,9 @@ settings:
         default: /mt-static/images/bug-pbmt-white.png
         scope: system
     og_image_min_size:
-        default: 100
+        default: 180
         scope: system
 
 tags:
     function:
-        OgImageContent: $og_image::og_image::hdlr_og_image_content
+        OgImageTag: $og_image::og_image::hdlr_og_image_content

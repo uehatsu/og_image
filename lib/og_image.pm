@@ -17,7 +17,7 @@ sub hdlr_og_image_content {
         my @images = $html->getElementsByTagName('img');
         my $output = '';
         my $max_image_size = 0;
-        my $min_size = load_plugindata('og_image_min_size');
+        my $min_size = load_plugindata('og_image_min_size') || 180;
         foreach my $image ( @images ) {
             my $attr    = $image->attributes;
             my $img_obj = MT::Image->new( Filename => $attr->{src} );
@@ -25,9 +25,13 @@ sub hdlr_og_image_content {
             my $height  = $img_obj->{height};
             my $image_size = $width * $height;
             next if ( $width < $min_size && $height < $min_size );
-            next if ( $max_image_size > $image_size );
-            $max_image_size = $image_size;
-            $output = $attr->{src};
+            my $og_image_content = sprintf('<meta property="og:image" content="%s" />', $attr->{src});
+            if ( $max_image_size > $image_size ) {
+                $max_image_size = $image_size;
+                $output = $og_image_content . "\n" . $output;
+            } else {
+                $output .= $og_image_content . "\n";
+            }
         }
         return $output ? $output : load_plugindata('og_image_default_path');
     } else {
