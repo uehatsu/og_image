@@ -33,9 +33,9 @@ sub hdlr_og_image_content {
                 $output .= $og_image_content . "\n";
             }
         }
-        return $output ? $output : load_plugindata('og_image_default_path');
+        return $output ? $output : sprintf('<meta property="og:image" content="%s" />', load_plugindata('og_image_default_path'));
     } else {
-        return load_plugindata('og_image_default_path');
+        return sprintf('<meta property="og:image" content="%s" />', load_plugindata('og_image_default_path'));
     }
 }
 

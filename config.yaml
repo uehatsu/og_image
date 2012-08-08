@@ -1,7 +1,7 @@
 id: og_image
 key: og_image
 name: og_image content クリエイター
-version: 0.02
+version: 0.03
 description: og_image の content を自動的に作成します
 author_name: Hatsuhito UENO A.K.A. uehatsu
 author_link: http://uehatsu.info
